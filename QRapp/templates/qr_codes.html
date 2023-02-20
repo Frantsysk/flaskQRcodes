@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR Codes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #444;
+        color: white;
+        padding: 10px;
+      }
+      h1 {
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+      h2 {
+        font-size: 20px;
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      p {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>QR Codes</h1>
+    </header>
+    <main>
+      <ul>
+        {% for qr_code in view_qr %}
+        <li>
+          <h2>Code ID: {{ qr_code[0] }}</h2>
+          <p>Code data: {{ qr_code[1] }}</p>
+          {{ qr_code[2]|safe }}
+          <hr>
+          <br>
+          <a href="/download?id={{ qr_code[0] }}"> Download QR code </a>
+          <br>
+          <br>
+          <hr>
+        </li>
+        {% endfor %}
+      </ul>
+    </main>
+  </body>
+</html>

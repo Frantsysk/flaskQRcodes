@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>QR Code Generator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">QR Code Generator</h1>
+            <form method="post" action="{{ url_for('generate_qr') }}">
+                <div class="form-group">
+                    <label for="data">Enter the data you want to encode:</label>
+                    <input type="text" class="form-control" name="data" id="data">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Generate QR Code">
+            </form>
+        </div>
+    </body>
+</html>
